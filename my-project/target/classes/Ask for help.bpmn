@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1l72qsu" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.9.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.15.0">
+  <bpmn:process id="AskForHelp" name="Ask For Help" isExecutable="true">
+    <bpmn:sequenceFlow id="Flow_0do9xo1" sourceRef="StartEvent_1" targetRef="Activity_1651cpo" />
+    <bpmn:endEvent id="Event_11xff71" name="end">
+      <bpmn:incoming>Flow_0q9tj6t</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0q9tj6t" sourceRef="Activity_1651cpo" targetRef="Event_11xff71" />
+    <bpmn:startEvent id="StartEvent_1" name="need someone&#39;s help">
+      <bpmn:outgoing>Flow_0do9xo1</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_067znd9" messageRef="Message_0fgcj3g" />
+    </bpmn:startEvent>
+    <bpmn:userTask id="Activity_1651cpo" name="Get help">
+      <bpmn:incoming>Flow_0do9xo1</bpmn:incoming>
+      <bpmn:outgoing>Flow_0q9tj6t</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmn:message id="Message_0fgcj3g" name="AskSomeoneForHelp" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="AskForHelp">
+      <bpmndi:BPMNEdge id="Flow_0do9xo1_di" bpmnElement="Flow_0do9xo1">
+        <di:waypoint x="215" y="117" />
+        <di:waypoint x="270" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0q9tj6t_di" bpmnElement="Flow_0q9tj6t">
+        <di:waypoint x="370" y="117" />
+        <di:waypoint x="432" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_11xff71_di" bpmnElement="Event_11xff71">
+        <dc:Bounds x="432" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="441" y="142" width="19" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1uiziz8_di" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="157" y="142" width="81" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0my48pz_di" bpmnElement="Activity_1651cpo">
+        <dc:Bounds x="270" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
